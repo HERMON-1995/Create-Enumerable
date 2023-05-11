@@ -2,20 +2,21 @@
 
 # My Enumerable module is top_level module for three method
 class MyList
-  attr_accessor :list
-  def initialize
-    @list = [1,2,3,4]
+  def initialize(data)
+    @list = data
   end
- module MyEnumerable
-     def filter
-        new_arr = []
-        each { |x| new_arr << x if yield(x) }
-        new_arr
-    end
+  def each(&block)
+    @list.each(&block)
   end
+
+  include Enumerable
+
   def less_than_5
-    @list.all? { |item| item < 5 }
- end
- include MyList
+   puts(@list.all? { |item| item < 5 })
+  end
 end
+
+list = MyList.new([1,2,3,4])
+
+list.less_than_5
   
