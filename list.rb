@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require_relative 'enumerable'
 
 # This is the top_level class for the enumerable method to use
