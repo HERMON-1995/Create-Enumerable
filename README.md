@@ -43,7 +43,7 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **[Interpreting Morse code]**
+- **[Class functionality]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
