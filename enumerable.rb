@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # My Enumerable module is top_level module for three method
 module MyEnumerable
   def all?
