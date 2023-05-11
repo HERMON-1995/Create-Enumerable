@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
+require_relative 'enumerable'
 class MyList
+  include MyEnumerable
   def initialize(*data)
     @list = data
   end
@@ -11,4 +13,4 @@ class MyList
 end
 
 list = MyList.new(1, 2, 3)
-list.each { |x| print x }
+puts(list.filter { |x| x >= 2 })
