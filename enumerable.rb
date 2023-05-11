@@ -1,21 +1,20 @@
 # frozen_string_literal: true
 
 # My Enumerable module is top_level module for three method
-class MyList
-  attr_accessor :list
-  def initialize
-    @list = [1,2,3,4]
+module MyEnumerable
+  def all?
+    each { |e| return false unless yield(e) } if block_given?
+    true
   end
- module MyEnumerable
-     def filter
-        new_arr = []
-        each { |x| new_arr << x if yield(x) }
-        new_arr
-    end
+
+  def any?
+    each { |e| return true if yield(e) } if block_given?
+    false
   end
-  def less_than_5
-    @list.all? { |item| item < 5 }
- end
- include MyList
+
+  def filter
+    result = []
+    each { |x| result << x if yield(x) }
+    result
+  end
 end
-  
